@@ -53,9 +53,14 @@ const Quiz = () => {
       setSelectedAnswer(null); 
     }
   };
+ 
    
  if (isQuizFinished) {
     return (
+      <div>
+      <div className='button-padding'>
+        <button onClick={() => navigate('/')}>LOGOUT</button>
+      </div>
       <div>
         <h1>Quiz Finished!</h1>
         <p>Your score is {score} out of {questions[subject].length}.</p>
@@ -74,6 +79,7 @@ const Quiz = () => {
         </div>
        </div>
       </div>
+      </div>
     );
   }
 
@@ -85,6 +91,11 @@ const Quiz = () => {
 
   return (
     <div>
+       <div className='button-padding'>
+      <button  onClick={() => navigate('/')}>
+              LOGOUT
+            </button>
+            </div>
       <h1>{subject} Quiz</h1>
       <div className="question-block">
         <p>

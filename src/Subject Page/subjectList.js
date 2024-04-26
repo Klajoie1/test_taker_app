@@ -10,8 +10,17 @@ const SubjectList = () => {
     navigate(`/quiz/${subject}`);
     console.log(`Navigate to quiz for ${subject}`);
   };
+  const handleLogout =() => {
+    navigate(`/`);
+  }
 
   return (
+    <div>
+       <div className='button-padding'>
+      <button  onClick={() => handleLogout()}>
+              LOGOUT
+            </button>
+            </div>
     <div className="subject-list">
       <h1>Select a Subject</h1>
       <ul>
@@ -23,6 +32,7 @@ const SubjectList = () => {
           </li>
         ))}
       </ul>
+    </div>
     </div>
   );
 };
