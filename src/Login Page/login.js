@@ -24,7 +24,7 @@ const Login = () => {
 
 
     return (
-        <div>
+        <div style={{'padding-top': "200px"}}>
             <h1>Login Page</h1>
             <input
                 type="text"
@@ -32,16 +32,16 @@ const Login = () => {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
             />
-            <br />
+            <br /> <br/>
             <input
                 type="password"
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
             />
-            <br />
+            <br /> <br/>
             <button onClick={handleLogin}>Login</button>
-            <br />
+            <br /> <br/>
             {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
             {successMessage && <div style={{ color: 'green', fontSize: '18px', marginTop: '10px' }}>{successMessage}</div>}
             <button>Forgot Password</button>
