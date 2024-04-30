@@ -1,0 +1,24 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '14.x'
+  displayName: 'Install Node.js'
+
+- script: |
+    npm install
+    npm run build  # Updated to 'npm run build' if that's your build command
+  displayName: 'npm install and build'
+
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Azure for Students'  
+    appName: 'Test_Taker_App'  
+    appType: 'webAppLinux'
+    runtimeStack: 'NODE|14-lts'
+    package: '$(Build.ArtifactStagingDirectory)'
